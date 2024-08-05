@@ -1,0 +1,8 @@
+<h1><%= @book.title %></h1>
+<p><strong>Tác giả:</strong> <%= @book.author.name %></p>
+<p><strong>Nhà xuất bản:</strong> <%= @book.publisher.name %></p>
+<p><strong>Danh mục:</strong> <%= @book.category.name %></p>
+<p><strong>Ngày xuất bản:</strong> <%= @book.published_date %></p>
+<p><strong>Giá thuê:</strong> <%= number_to_currency(@book.rental_price) %></p>
+<p><strong>Mô tả:</strong> <%= @book.description %></p>
+<%= link_to "Quay lại danh sách sách", books_path, class: "btn btn-secondary" %>

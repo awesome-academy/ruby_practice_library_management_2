@@ -1,12 +1,16 @@
+/*header*/
 header {
   margin-bottom: 20px;
 }
 
+/*footer*/
 footer {
   position: fixed;
   bottom: 0;
   width: 100%;
+  z-index: 999;
 }
+
 .needs-validation .form-control:invalid {
   border-color: #dc3545;
   padding-right: calc(1.5em + 0.75rem);
@@ -19,3 +23,9 @@ footer {
 .alert {
   margin-top: 20px;
 }
+
+/*pages*/
+.mb-custom{
+  margin-bottom: 100px;
+}
+
