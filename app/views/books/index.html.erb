@@ -1,5 +1,26 @@
 <h1>Danh sách Sách</h1>
 
+<%= search_form_for @q, class: "form-inline" do |f| %>
+  <div class="form-group mb-2">
+    <%= f.text_field :title_cont, placeholder: "Tìm theo tiêu đề", class: "form-control" %>
+  </div>
+  <div class="form-group mb-2">
+    <%= f.text_field :description_cont, placeholder: "Tìm theo mô tả", class: "form-control" %>
+  </div>
+  <div class="form-group mb-2">
+    <%= f.select :author_id_eq, Author.all.map { |a| [a.name, a.id] }, { include_blank: true, prompt: "Chọn tác giả" }, class: "form-control" %>
+  </div>
+  <div class="form-group mb-2">
+    <%= f.select :publisher_id_eq, Publisher.all.map { |p| [p.name, p.id] }, { include_blank: true, prompt: "Chọn nhà xuất bản" }, class: "form-control" %>
+  </div>
+  <div class="form-group mb-2">
+    <%= f.select :category_id_eq, Category.all.map { |c| [c.name, c.id] }, { include_blank: true, prompt: "Chọn thể loại" }, class: "form-control" %>
+  </div>
+  <div class="form-group mb-2">
+    <button type="submit" class="btn btn-primary">Tìm kiếm</button>
+  </div>
+<% end %>
+
 <div class="alert alert-info">
   <p>Hiện tại có tổng cộng <%= @pagy.count %> sách.</p>
 </div>
