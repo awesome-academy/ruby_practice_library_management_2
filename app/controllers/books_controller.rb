@@ -1,6 +1,6 @@
 class BooksController < ApplicationController
   include Pagy::Backend
-
+  load_and_authorize_resource
   before_action :set_book, only: [:show]
 
   def index

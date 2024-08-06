@@ -22,10 +22,17 @@ footer {
 
 .alert {
   margin-top: 20px;
+  position: relative;
 }
 
 /*pages*/
 .mb-custom{
   margin-bottom: 100px;
 }
+
+.alert.fade-out {
+  opacity: 0;
+  transition: opacity 1s ease-out;
+}
+
 
