@@ -4,12 +4,8 @@ class BooksController < ApplicationController
   before_action :set_book, only: [:show]
 
   def index
-    @pagy, @books = pagy(
-      Book.by_author_and_category(
-        params[:author_id],
-        params[:category_id]
-      ).includes(:author, :publisher, :category)
-    )
+    @q = Book.ransack(params[:q])
+    @pagy, @books = pagy(@q.result)
   end
 
   def show; end
