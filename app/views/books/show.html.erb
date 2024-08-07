@@ -5,4 +5,4 @@
 <p><strong>Ngày xuất bản:</strong> <%= @book.published_date %></p>
 <p><strong>Giá thuê:</strong> <%= number_to_currency(@book.rental_price) %></p>
 <p><strong>Mô tả:</strong> <%= @book.description %></p>
-<%= link_to "Quay lại danh sách sách", books_path, class: "btn btn-secondary" %>
+<%= link_to "Quay lại", books_path, class: "btn btn-secondary" %>
