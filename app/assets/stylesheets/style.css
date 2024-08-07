@@ -61,4 +61,130 @@ footer {
   box-shadow: 1px 1px 1px 10px rgb(0,0,0,0.2)
 }
 
+/*comments*/
+#form_cmt{
+  margin-bottom: 100px;
+}
 
+.comment{
+  margin-bottom: 20px;
+}
+
+/*borrow-rq*/
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.status-filter {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.btn-all {
+  background-color: #007bff;
+}
+
+.btn-pending {
+  background-color: #ffc107;
+}
+
+.btn-approved {
+  background-color: #28a745;
+}
+
+.btn-rejected {
+  background-color: #dc3545;
+}
+
+.btn-canceled {
+  background-color: #6c757d;
+}
+
+.btn:hover {
+  opacity: 0.8;
+}
+
+.borrow-requests-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  padding: 15px;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.card.pending {
+  border-left: 5px solid #ffc107;
+}
+
+.card.approved {
+  border-left: 5px solid #28a745;
+}
+
+.card.rejected {
+  border-left: 5px solid #dc3545;
+}
+
+.card.canceled {
+  border-left: 5px solid #6c757d;
+}
+
+.card-header {
+  margin-bottom: 10px;
+}
+
+.book-title {
+  font-size: 18px;
+  margin: 0;
+}
+
+.request-status {
+  font-size: 16px;
+  margin: 0;
+}
+
+.card-body {
+  margin-bottom: 10px;
+}
+
+.btn-danger {
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: #dc3545;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn-danger:hover {
+  transform: scale(0.97);
+}
+
+.btn-outline-primary:hover{
+  transform: scale(0.97);
+}
+
+/*history*/
+#history{
+  margin-bottom: 100px;
+}

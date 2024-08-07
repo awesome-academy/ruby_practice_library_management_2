@@ -12,6 +12,11 @@
         <li class="nav-item">
           <%= link_to "Thư viện sách", books_path, class: "nav-link" %>
         </li>
+        <% if user_signed_in? %>
+          <li class="nav-item">
+            <%= link_to "Lịch sử mượn sách", user_borrow_requests_path(current_user), class: "nav-link" %>
+          </li>
+        <% end %>
       </ul>
       <ul class="navbar-nav">
         <% if user_signed_in? %>
