@@ -188,3 +188,33 @@ h1 {
 #history{
   margin-bottom: 100px;
 }
+
+/*dashboard*/
+.dashboard-stats{
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.dashboard-stats h2 {
+  color: #007bff;
+}
+
+.dashboard-stats .list-group-item{
+  border: none;
+  padding: 15px;
+}
+
+.dashboard-stats .list-group-item:nth-child(odd){
+  background-color: #e9ecef;
+}
+
+/*check-box*/
+.custom-checkbox{
+  left: 45px;
+}
+
+/*update*/
+#update_br{
+  margin-bottom: 100px;
+}

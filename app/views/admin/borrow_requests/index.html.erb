@@ -1,0 +1,42 @@
+<h1 class="mb-4">Danh sách yêu cầu mượn sách</h1>
+
+<%= form_with url: batch_update_admin_borrow_requests_path, method: :patch, local: true do |form| %>
+  <div class="table-responsive">
+    <table class="table table-striped table-bordered">
+      <thead class="thead-dark">
+        <tr>
+          <th></th>
+          <th>Người dùng</th>
+          <th>Sách</th>
+          <th>Ngày bắt đầu</th>
+          <th>Ngày kết thúc</th>
+          <th>Trạng thái</th>
+          <th>Lý do từ chối</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @borrow_requests.each do |borrow_request| %>
+          <tr class="<%= status_row_class(borrow_request.status) %>">
+            <td>
+              <%= check_box_tag "borrow_request_ids[]", borrow_request.id, false, class: "form-check-input custom-checkbox" %>
+            </td>
+            <td><%= borrow_request.user.name %></td>
+            <td><%= borrow_request.book.title %></td>
+            <td><%= borrow_request.start_date %></td>
+            <td><%= borrow_request.end_date %></td>
+            <td>
+              <%= select_tag "borrow_requests[#{borrow_request.id}][status]", options_for_select(BorrowRequest.statuses.keys.map { |status| [status.humanize, status] }, borrow_request.status), include_blank: "Chọn trạng thái", class: "form-control status-select" %>
+            </td>
+            <td>
+              <%= text_area_tag "borrow_requests[#{borrow_request.id}][rejection_reason]", borrow_request.rejection_reason, placeholder: "Nhập lý do từ chối", rows: 1, class: "form-control rejection-reason", style: borrow_request.status == "rejected" ? "" : "display: none;" %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="form-group" id="update_br">
+    <%= form.submit "Cập nhật trạng thái", class: "btn btn-primary mt-3" %>
+  </div>
+<% end %>

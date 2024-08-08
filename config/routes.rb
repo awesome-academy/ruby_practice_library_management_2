@@ -21,4 +21,13 @@ Rails.application.routes.draw do
       end
     end
   end
+
+  namespace :admin do
+    root to: "dashboard#index", as: "root"
+    resources :borrow_requests do
+      collection do
+        patch :batch_update
+      end
+    end
+  end
 end
