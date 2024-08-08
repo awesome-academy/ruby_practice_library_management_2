@@ -1,0 +1,31 @@
+<h1 class="text-center my-4">PiuConal-Vũ Trọng Hiếu</h1>
+
+<p class="text-center mb-4">Chào mừng đến với trang quản lý của bạn!</p>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="dashboard-stats card p-4 mb-4">
+        <h2 class="card-title mb-4">Thống kê yêu cầu mượn sách</h2>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">
+            <strong>Tổng số yêu cầu mượn sách:</strong> <%= @total_borrow_requests %>
+          </li>
+          <li class="list-group-item">
+            <strong>Số yêu cầu mượn sách chưa xử lý:</strong> <%= @pending_borrow_requests %>
+          </li>
+          <li class="list-group-item">
+            <strong>Số yêu cầu mượn sách đã được xác nhận:</strong> <%= @approved_borrow_requests %>
+          </li>
+          <li class="list-group-item">
+            <strong>Số yêu cầu mượn sách đã bị từ chối:</strong> <%= @rejected_borrow_requests %>
+          </li>
+        </ul>
+
+        <div class="mt-4 text-center">
+          <%= link_to "Quản lý yêu cầu mượn sách", admin_borrow_requests_path, class: "btn btn-primary btn-lg" %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

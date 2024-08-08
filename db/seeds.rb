@@ -39,4 +39,12 @@ categories = Category.all
   )
 end
 
+User.create!(
+  name: 'Admin User',
+  email: 'admin@example.com',
+  password: 'password',
+  password_confirmation: 'password',
+  role: :admin
+) unless User.exists?(email: 'admin@example.com')
+
 

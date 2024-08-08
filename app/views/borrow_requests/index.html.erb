@@ -1,0 +1,26 @@
+<h1 class="mb-4">Lịch sử mượn sách</h1>
+
+<div class="status-filter mb-4">
+  <%= link_to "Tất cả (#{current_user.borrow_requests.count})", user_borrow_requests_path(params[:user_id]), class: "btn btn-outline-primary btn-all mr-2" %>
+  <% BorrowRequestsController::STATUS_LABELS.keys.each do |status| %>
+    <%= link_to "#{status_label(status)} (#{current_user.borrow_requests.where(status: status).count})", user_borrow_requests_path(params[:user_id], status: status), class: "btn btn-outline-primary btn-#{status} mr-2" %>
+  <% end %>
+</div>
+
+<div class="borrow-requests-container" id="history">
+  <% @borrow_requests.each do |request| %>
+    <div class="card mb-3 <%= request.status.downcase %>">
+      <div class="card-header">
+        <h5 class="book-title">Sách: <%= request.book.title %></h5>
+        <p class="request-status mb-0"><strong>Trạng thái:</strong> <%= status_label(request.status) %></p>
+      </div>
+      <div class="card-body">
+        <p><strong>Ngày bắt đầu:</strong> <%= request.start_date %></p>
+        <p><strong>Ngày kết thúc:</strong> <%= request.end_date %></p>
+        <% if request.pending? %>
+          <%= button_to "Hủy yêu cầu", cancel_book_borrow_request_path(request.book, request), method: :patch, class: "btn btn-danger" %>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+</div>
